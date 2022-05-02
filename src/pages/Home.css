@@ -1,0 +1,38 @@
+.contain{
+  position: relative;
+  text-align: center;
+  width: 100vw;
+  margin: auto;
+  height: calc(100vh - 56px);
+  max-height: calc(100vh - 56px);
+}
+
+.image {
+  position: relative;
+  background-image: url("https://hbomax-images.warnermediacdn.com/images/GXkRjxwjR68PDwwEAABKJ/tileburnedin?size=1280x720&partner=hbomaxcom&v=1e5180db922e989abf8e4db3d85a3c76&language=es-419&host=art-gallery.api.hbo.com&w=Infinity");
+  width: 100%;
+  height: calc(100vh - 56px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: .3;
+}
+
+.list{
+  position:absolute;
+  top: 2vh;
+  left: 0;
+  width: 100%;
+  overflow-y: scroll;
+  height: calc(100vh - 56px - 2vh);
+  max-height: calc(100vh - 56px - 2vh);
+}
+
+.card-body{
+  font-size: 12px;
+  padding: auto;
+}
+
+.card-body p{
+  margin-bottom: 10px;
+}
