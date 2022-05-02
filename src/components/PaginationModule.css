@@ -1,0 +1,51 @@
+.pagination{
+    display: flex;
+    width: 100%;
+    max-width: 440px;
+    margin: 50px auto;
+    justify-content: center;
+    height: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.pagItem{
+    margin: 0 5px;
+    border:1px solid #000000;
+    cursor: pointer;
+}
+
+.pagItem span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px;
+    height: 100%;
+    padding: auto;
+    color: #000000;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.active{
+    background:  #000000;
+}
+
+.active span{
+    color: white;
+}
+
+
+@media (max-width: 500px) {
+
+    .pagItem span{
+        width: 45px;
+    }
+
+    .pagItem{
+        margin: 0 2px;
+    }
+}
