@@ -11,7 +11,7 @@ const PaginationModule = ({ object, onPageChanged }) => {
 
   useEffect(() => {
     gotoPage(1);
-  }, []);
+  }, [totalPages]);
 
   const gotoPage = (page) => {
     const currentPage = Math.max(0, Math.min(page, totalPages));

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Navbar = ({ setFilters }) => {
   const [filt, setFilt] = useState({ gender: "All", name: "" });
@@ -18,9 +17,7 @@ const Navbar = ({ setFilters }) => {
       style={{ brightness: 100 }}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          The Rick and Morty UI
-        </Link>
+        <span className="navbar-brand">The Rick and Morty UI</span>
         <button
           className="navbar-toggler"
           type="button"
@@ -35,18 +32,27 @@ const Navbar = ({ setFilters }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto ms-5 mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <span
+                onClick={() => {
+                  setFilt({ gender: "All", name: "" });
+                  setFilters({ gender: "All", name: "" });
+                }}
+                className="nav-link active"
+                aria-current="page"
+                style={{ cursor: "pointer" }}
+              >
                 Home
-              </Link>
+              </span>
             </li>
           </ul>
           <form onSubmit={onSubmit} className="d-flex align-items-center">
             <label style={{ minWidth: "max-content", color: "whitesmoke" }}>
-              Genero:{" "}
+              Gender:{" "}
             </label>
             <select
               onChange={onChange}
               name="gender"
+              value={filt.gender}
               className="form-select d-flex ms-2 me-3"
               aria-label="Default select example"
             >
@@ -59,9 +65,10 @@ const Navbar = ({ setFilters }) => {
             <input
               onChange={onChange}
               name="name"
+              value={filt.name}
               className="form-control me-3"
               type="search"
-              placeholder="Nombre..."
+              placeholder="Name..."
               aria-label="Search"
             />
             <button className="btn btn-outline-success" type="submit">

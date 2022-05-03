@@ -26,18 +26,11 @@ const App = () => {
     return query;
   };
 
-  const resetStates = () => {
-    setCurrentPage(1);
-    setTotalPages(1);
-    setTotalItems(0);
-    setFilters({});
-  };
-
   const getList = async (page) => {
     try {
       let queries = getFilters();
       if (queries !== "") {
-        queries = "?page=1" + queries;
+        queries = `?page=${page}${queries}`;
       } else {
         queries = `?page=${page}`;
       }
@@ -46,14 +39,13 @@ const App = () => {
       setTotalPages(arrList.data.info.pages);
       setTotalItems(arrList.data.info.count);
     } catch (error) {
-      resetStates();
+      setList([]);
     }
   };
 
   useEffect(() => {
-    getFilters();
     getList(1);
-  }, []);
+  }, [filters]);
 
   return (
     <div>
